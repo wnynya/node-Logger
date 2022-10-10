@@ -22,7 +22,7 @@
     "babel": "npx babel logger.mjs --out-file-extension .js > logger.js"
   },
   "dependencies": {
-    "datwo": "^0.5.0"
+    "datwo": "^0.7.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",

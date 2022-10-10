@@ -1,1 +1,1 @@
-# @wany/logger
+# @wnynya/logger
