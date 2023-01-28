@@ -1,4 +1,8 @@
 import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 import { Console } from 'console';
 import Date from 'datwo';
 
@@ -11,6 +15,9 @@ class Logger extends Console {
     this.console = new Console(options);
 
     this.dir = options.dir;
+    if (this.dir && this.dir.startsWith('.')) {
+      this.dir = path.resolve(path.resolve(__dirname, '../../../'), this.dir);
+    }
     this.ANSIColor = options.ANSIColor || '';
     this.source = options.source;
     this.channel = options.channel;
@@ -202,11 +209,11 @@ export default class {
     defaultLogger.debug(...args);
   }
 
-  static set(logger) {
+  static setDefaultLogger(logger) {
     defaultLogger = logger;
   }
 
-  static get() {
+  static getDefaultLogger() {
     return defaultLogger;
   }
 }

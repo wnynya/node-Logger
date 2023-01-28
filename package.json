@@ -1,6 +1,6 @@
 {
   "name": "@wnynya/logger",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "@wnynya/logger",
   "author": "Wany <sung@wany.io> (https://wany.io)",
   "main": "logger.js",
